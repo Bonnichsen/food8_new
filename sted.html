@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="logo_section">
+        <a href="index.html" class="logo"></a>
+    </section>
+    <header>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="steder.html">STEDER</a>
+            <a href="nyheder.html">NYHEDER</a>
+            <a href="om-food8.html">OM FOOD8</a>
+        </nav>
+    </header>
+    <div id="grid-container" class="sted">
+
+        <section data-container>
+            <h1></h1>
+            <article>
+                <h2 data-overskrift></h2>
+                <img src="" alt="-" data-billede>
+                <h3 data-manchet></h3>
+                <p data-textcontent></p>
+                <!-- KONTAKTOPLYSNINGER -->
+                <p data-open></p>
+                <a href="" target="_top" data-email></a>
+                <p data-tlf_nr></p>
+                <p data-adresse></p>
+                <!-- MENUKORT -->
+                <a href="" target="_blank" data-menukort></a>
+                <a href="" target="_blank" data-drinkskort></a>
+                <a href="" target="_blank" data-seperatmenu></a>
+                <a href="" target="_blank" data-seperatmenu2></a><br>
+                <!-- KONTROLRAPPORT -->
+                <a href="" target="_blank" data-kontrol></a>
+                <!--            <button data-button="">Læs mere</button>-->
+            </article>
+        </section>
+    </div>
+    <script>
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/restauranter/" + id;
+        let sted = {};
+
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(apiURL);
+            sted = await dataJson.json();
+            console.log("It's so fetch to be single, Gretchen!");
+            visSted();
+        };
+
+        function visSted() {
+
+            let display = document.querySelector("[data-container]");
+
+            display.querySelector("[data-overskrift]").textContent = sted.title.rendered;
+            display.querySelector("[data-billede]").src = sted.acf.billede;
+            display.querySelector("[data-manchet]").textContent = sted.acf.manchet;
+            display.querySelector("[data-textcontent]").innerHTML = sted.content.rendered;
+            display.querySelector("[data-open]").innerHTML = sted.acf.åbningstider;
+            display.querySelector("[data-email]").textContent = sted.acf.email;
+            display.querySelector("[data-email]").href = ("mailto:") + sted.acf.email;
+            display.querySelector("[data-tlf_nr]").textContent = sted.acf.tlf_nr;
+            display.querySelector("[data-adresse]").textContent = sted.acf.adresse;
+            display.querySelector("[data-menukort]").textContent = sted.acf.menukort.title;
+            display.querySelector("[data-menukort]").href = sted.acf.menukort.url;
+            display.querySelector("[data-drinkskort]").textContent = sted.acf.drinkskort.title;
+            display.querySelector("[data-drinkskort]").href = sted.acf.drinkskort.url;
+            display.querySelector("[data-seperatmenu]").textContent = sted.acf.seperatmenu.title;
+            display.querySelector("[data-seperatmenu]").href = sted.acf.seperatmenu.url;
+            display.querySelector("[data-seperatmenu2]").textContent = sted.acf.seperatmenu2.title;
+            display.querySelector("[data-seperatmenu2]").href = sted.acf.seperatmenu2.url;
+            display.querySelector("[data-kontrol]").href = sted.acf.kontrolrapport;
+            display.querySelector("[data-kontrol]").textContent = "kontrolrapport";
+            console.log("kontrol");
+
+        };
+    </script>
+</body>
+
+</html>

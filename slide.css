@@ -1,0 +1,126 @@
+/*--- SLIDESHOW ---*/
+
+#slideshow_body {
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(0.75);
+    vertical-align: middle;
+    position: fixed;
+    bottom: 0;
+    background-position: center;
+}
+
+/*-- SLIDE IMGS --*/
+
+#slide1 {
+    background-image: url(img/slideshow/fleisch.jpg);
+}
+
+#slide2 {
+    background-image: url(img/slideshow/noho-01.jpg);
+}
+
+#slide3 {
+    background-image: url(img/slideshow/roedder_vin2-01.jpg);
+    background-position: left;
+}
+
+#slide4 {
+    background-image: url(img/slideshow/un_mercato-01.jpg);
+    background-position: right;
+}
+
+#slide5 {
+    background-image: url(img/slideshow/noho.jpg);
+}
+
+#slide6 {
+    background-image: url(img/slideshow/roedder_vin-01.jpg);
+    background-position: right;
+}
+
+#slide7 {
+    background-image: url(img/slideshow/fleisch2.png);
+}
+
+#slide8 {
+    background-image: url(img/slideshow/un_mercato2-01.jpg);
+    background-position: right;
+}
+
+#slide9 {
+    background-image: url(img/slideshow/noho2-01.jpg);
+    background-position: right;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+#dots {
+    position: absolute;
+    bottom: 0;
+    width: 50.5vw;
+    left: 46.5%;
+    display: none;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

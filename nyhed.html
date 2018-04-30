@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <!--- META TEXT: SEO --->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="title" content="">
+
+    <!-- META TEXT: SEO END -->
+    <title>Food8</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="logo_section">
+        <a href="index.html" class="logo"></a>
+    </section>
+    <header>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="steder.html">STEDER</a>
+            <a href="nyheder.html">NYHEDER</a>
+            <a href="om-food8.html">OM FOOD8</a>
+        </nav>
+    </header>
+
+    <div id="grid-container" class="nyhed">
+
+        <section data-container>
+            <article>
+                <div class="nyhedsbillede"><img src="" alt="-" data-billede></div>
+                <div class="nyhedsindhold">
+                    <p data-dato></p>
+                    <h2 data-overskrift></h2>
+                    <h3 data-manchet></h3>
+                    <p data-textcontent></p>
+                </div>
+            </article>
+        </section>
+
+    </div>
+
+
+    <script>
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let id = searchParams.get("id");
+        let apiURL = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/nyheder/" + id;
+        let nyhed = {};
+
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+            let dataJson = await fetch(apiURL);
+            nyhed = await dataJson.json();
+            console.log("It's so fetch to be single, Gretchen!");
+            visNyhed();
+        };
+
+        function visNyhed() {
+            let display = document.querySelector("[data-container]");
+
+            display.querySelector("[data-overskrift]").textContent = nyhed.title.rendered;
+            display.querySelector("[data-billede]").src = nyhed.acf.billede;
+            display.querySelector("[data-manchet]").textContent = nyhed.acf.manchet;
+            display.querySelector("[data-dato]").textContent = nyhed.acf.dato;
+            display.querySelector("[data-textcontent]").innerHTML = nyhed.content.rendered;
+
+            console.log("You're now in singleview!")
+        };
+    </script>
+</body>
+
+</html>
