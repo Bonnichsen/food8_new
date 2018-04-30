@@ -2,6 +2,14 @@
 <html lang="da">
 
 <head>
+
+    <!-- BASIC -->
+    <title>Food8</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!--- META TEXT: SEO --->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +19,40 @@
     <meta name="title" content="">
 
     <!-- META TEXT: SEO END -->
-    <title>Food8</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
+<section class="navbar">
+    <div class="header">
+        <div class="dropdown">
+            <div id="myDropdown" class="dropdown-content">
+                <a href="index.html" class="nav_home">HOME</a>
+                <a href="steder.html" class="nav_steder">STEDER</a>
+                <a href="nyheder.html" class="nav_nyheder">NYHEDER</a>
+                <a href="om-food8.html" class="nav_food8">OM FOOD8</a>
+            </div>
+        </div>
+
+        <div class="container_drop">
+            <div class="bars bar1"></div>
+            <div class="bars bar2"></div>
+            <div class="bars bar3"></div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <div id="outer_frame">
+            <iframe id="inner_frame" scrolling="no" src="http://benjaminbonnichsen.dk/food8/wordpress/om_food8/booking/" frameborder="0">
+        </iframe>
+        </div>
+    </div>
+
+    <div id="main">
+        <div onclick="openNav()" id="book_icon"></div>
+        <span id="open_bttn" onclick="openNav()"><p>
+            BOOK BORD
+        </p></span>
+    </div>
+</section>
 
 <body>
     <section class="logo_section">
@@ -47,6 +85,24 @@
 
 
     <script>
+        $(".container_drop").click(function() {
+            $(".container_drop").toggleClass("change");
+            $(".dropdown").slideToggle();
+        });
+
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "250px";
+            $("#main").hide();
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            $("#main").fadeIn();
+        }
+
         let url = new URL(window.location.href);
         let searchParams = new URLSearchParams(url.search);
         let id = searchParams.get("id");
