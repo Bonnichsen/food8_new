@@ -346,12 +346,6 @@ footer .nyhedsbrev p {
     margin: 20px 0;
 }
 
-#inner_frame {
-    height: 120vh;
-    position: relative;
-    top: -160px;
-}
-
 #p_index,
 .p_h1 {
     font-size: 30px;
@@ -362,7 +356,7 @@ footer .nyhedsbrev p {
 #inner_frame {
     height: 900px;
     position: relative;
-    top: -270px;
+    top: -220px;
 }
 
 #outer_frame {
@@ -370,17 +364,6 @@ footer .nyhedsbrev p {
     width: 100%;
     top: 5vw;
     overflow: hidden;
-}
-
-.nav_splash {
-    position: relative;
-    top: -3vw;
-    left: 10vw;
-}
-
-.nav_splash a {
-    color: white;
-    font-family: "Lato", sans-serif;
 }
 
 #open_bttn {
