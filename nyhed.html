@@ -55,12 +55,11 @@
 </section>
 
 <body>
-<<<<<<< HEAD
-    <section class="logo_section">
-        <a href="index.html" class="logo"></a>
-    </section>
-    <header>
-<!--
+	<section class="logo_section">
+		<a href="index.html" class="logo"></a>
+	</section>
+	<header>
+		<!--
 <nav>
     <a href="index.html">HOME</a>
     <a href="steder.html">STEDER</a>
@@ -68,72 +67,72 @@
     <a href="om-food8.html">OM FOOD8</a>
 </nav>
 -->
-    </header>
+	</header>
 
-    <div id="grid-container" class="nyhed">
+	<div id="grid-container" class="nyhed">
 
-        <section data-container>
-            <article>
-                <div class="nyhedsbillede"><img src="" alt="-" data-billede></div>
-                <div class="nyhedsindhold">
-                    <p data-dato></p>
-                    <h2 data-overskrift></h2>
-                    <h3 data-manchet></h3>
-                    <p data-textcontent></p>
-                </div>
-            </article>
-        </section>
+		<section data-container>
+			<article>
+				<div class="nyhedsbillede"><img src="" alt="-" data-billede></div>
+				<div class="nyhedsindhold">
+					<p data-dato></p>
+					<h2 data-overskrift></h2>
+					<h3 data-manchet></h3>
+					<p data-textcontent></p>
+				</div>
+			</article>
+		</section>
 
-    </div>
-
-
-    <script>
-        $(".container_drop").click(function() {
-            $(".container_drop").toggleClass("change");
-            $(".dropdown").slideToggle();
-        });
+	</div>
 
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "300px";
-            document.getElementById("main").style.marginLeft = "250px";
-            $("#main").hide();
-        }
+	<script>
+		$(".container_drop").click(function() {
+			$(".container_drop").toggleClass("change");
+			$(".dropdown").slideToggle();
+		});
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            $("#main").fadeIn();
-        }
 
-        let url = new URL(window.location.href);
-        let searchParams = new URLSearchParams(url.search);
-        let id = searchParams.get("id");
-        let apiURL = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/nyheder/" + id;
-        let nyhed = {};
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "300px";
+			document.getElementById("main").style.marginLeft = "250px";
+			$("#main").hide();
+		}
 
-        document.addEventListener("DOMContentLoaded", hentJson);
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			$("#main").fadeIn();
+		}
 
-        async function hentJson() {
-            let dataJson = await fetch(apiURL);
-            nyhed = await dataJson.json();
-            console.log("It's so fetch to be single, Gretchen!");
-            visNyhed();
-        };
+		let url = new URL(window.location.href);
+		let searchParams = new URLSearchParams(url.search);
+		let id = searchParams.get("id");
+		let apiURL = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/nyheder/" + id;
+		let nyhed = {};
 
-        function visNyhed() {
-            let display = document.querySelector("[data-container]");
+		document.addEventListener("DOMContentLoaded", hentJson);
 
-            display.querySelector("[data-overskrift]").textContent = nyhed.title.rendered;
-            display.querySelector("[data-billede]").src = nyhed.acf.billede;
-            display.querySelector("[data-manchet]").textContent = nyhed.acf.manchet;
-            display.querySelector("[data-dato]").textContent = nyhed.acf.dato;
-            display.querySelector("[data-textcontent]").innerHTML = nyhed.content.rendered;
+		async function hentJson() {
+			let dataJson = await fetch(apiURL);
+			nyhed = await dataJson.json();
+			console.log("It's so fetch to be single, Gretchen!");
+			visNyhed();
+		};
 
-            console.log("You're now in singleview!")
-        };
-    </script>
-=======
+		function visNyhed() {
+			let display = document.querySelector("[data-container]");
+
+			display.querySelector("[data-overskrift]").textContent = nyhed.title.rendered;
+			display.querySelector("[data-billede]").src = nyhed.acf.billede;
+			display.querySelector("[data-manchet]").textContent = nyhed.acf.manchet;
+			display.querySelector("[data-dato]").textContent = nyhed.acf.dato;
+			display.querySelector("[data-textcontent]").innerHTML = nyhed.content.rendered;
+
+			console.log("You're now in singleview!")
+		};
+	</script>
+
 	<section class="logo_section">
 		<a href="index.html" class="logo"></a>
 	</section>
@@ -290,7 +289,7 @@
 			console.log("You're now in singleview!")
 		};
 	</script>
->>>>>>> origin/master
+
 </body>
 
 </html>
