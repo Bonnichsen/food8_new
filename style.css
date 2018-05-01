@@ -1371,9 +1371,16 @@ input[type=submit]:hover {
 
 
 .btn_container {
+    margin-left: 15vw;
     margin-bottom: 20vw;
+    font-family: "Raleway";
+
 }
 
+.btn_container .text {
+    font-weight: 700;
+    font-size: 2em;
+}
 
 .medlem {
     font-family: "Raleway";
