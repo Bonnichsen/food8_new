@@ -206,6 +206,10 @@ footer .nyhedsbrev p {
     /*    display: none;*/
 }
 
+.changeColor {
+    background-color: rgba(51, 64, 82, 0.75);
+}
+
 .container_drop {
     text-align: right;
     margin: 0;
