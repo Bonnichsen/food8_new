@@ -356,7 +356,7 @@ footer .nyhedsbrev p {
 #inner_frame {
     height: 900px;
     position: relative;
-    top: -220px;
+    top: -265px;
 }
 
 #outer_frame {
@@ -380,7 +380,7 @@ footer .nyhedsbrev p {
     z-index: 800;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #334052;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -399,7 +399,7 @@ footer .nyhedsbrev p {
     z-index: 800;
     top: 0;
     left: 0;
-    background-color: #242323;
+    background-color: #334052;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
