@@ -952,6 +952,18 @@ footer .nyhedsbrev p {
         left: 88vw;
     }
 
+    /*-- SOME IKONER: IPAD --*/
+    .some_splash .instagram,
+    .some_splash .facebook {
+        font-size: 1.3em;
+        width: 5vw;
+        height: 6vw;
+    }
+    .some_splash .instagram {
+        right: 7vw;
+    }
+
+
 }
 
 
@@ -1084,18 +1096,16 @@ footer .nyhedsbrev p {
         top: 2vw;
     }
 
-    /*-- SOME IKONER --*/
-    .some_splash .instagram {
-        width: 10vw;
-        height: 12vw;
-        right: 13vw;
-    }
-
+    /*-- SOME IKONER: MOBILE --*/
+    .some_splash .instagram,
     .some_splash .facebook {
-        width: 10vw;
-        height: 12vw;
+        font-size: 1.3em;
+        width: 8vw;
+        height: 10vw;
     }
-
+    .some_splash .instagram {
+        right: 11vw;
+    }
 }
 
 
