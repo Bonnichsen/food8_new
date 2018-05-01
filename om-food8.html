@@ -2,24 +2,24 @@
 <html lang="da">
 
 <head>
-	<!--- META TEXT: SEO --->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="keywords" content="">
-	<meta name="title" content="">
+    <!--- META TEXT: SEO --->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="title" content="">
 
-	<!-- META TEXT: SEO END -->
-	<title>Om Food8</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- META TEXT: SEO END -->
+    <title>Om Food8</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<section class="navbar">
+    <section class="navbar">
         <div class="header">
             <div class="dropdown">
                 <div id="myDropdown" class="dropdown-content">
@@ -53,11 +53,11 @@
         </div>
     </section>
 
-	<section class="logo_section">
-		<a href="index.html" class="logo"></a>
-	</section>
-	<header>
-<!--
+    <section class="logo_section">
+        <a href="index.html" class="logo"></a>
+    </section>
+    <header>
+        <!--
 <nav>
     <a href="index.html">HOME</a>
     <a href="steder.html">STEDER</a>
@@ -65,54 +65,54 @@
     <a href="om-food8.html">OM FOOD8</a>
 </nav>
 -->
-	</header>
+    </header>
 
-	<div class="overskrift">
-		<h1>Om Food8</h1>
-	</div>
+    <div class="overskrift">
+        <h1>Om Food8</h1>
+    </div>
 
-	<div id="grid-container" class="about">
+    <div id="grid-container" class="about">
 
-		<section data-container></section>
-
-
-	</div>
+        <section data-container></section>
 
 
-
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="close">&times;</span>
-
-			<form action="/action_page.php">
-				<div class="container">
-					<h2>Vil du være den der anbefaler restauranter til dine venner?</h2>
-					<p>Skriv dig op til vores nyhedsbrev og få ugentlige guides og nyheder om food8s deltagende steder.</p>
-				</div>
-
-				<div class="container">
-					<input type="text" placeholder="Dit navn" name="name" required>
-					<input type="text" placeholder="Din E-mail" name="mail" required>
-
-				</div>
-
-				<div class="container">
-					<input type="submit" value="FORTSÆT">
-				</div>
-			</form>
-
-		</div>
-	</div>
+    </div>
 
 
 
-	<template data-template>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <form action="/action_page.php">
+                <div class="container">
+                    <h2>Vil du være den der anbefaler restauranter til dine venner?</h2>
+                    <p>Skriv dig op til vores nyhedsbrev og få ugentlige guides og nyheder om food8s deltagende steder.</p>
+                </div>
+
+                <div class="container">
+                    <input type="text" placeholder="Dit navn" name="name" required>
+                    <input type="text" placeholder="Din E-mail" name="mail" required>
+
+                </div>
+
+                <div class="container">
+                    <input type="submit" value="FORTSÆT">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+    <template data-template>
        <article>
           <p data-dato></p>
-<!--           <h2 data-overskrift></h2>-->
+           <h2 data-overskrift></h2>
            <h3 data-manchet></h3>
            <p data-textcontent></p>
 
@@ -120,109 +120,123 @@
 
    </template>
 
-	<footer>
 
-		<section>
-			<a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"></a>
-		</section>
-		<section>
-			<a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"></a>
-		</section>
-		<section class="nyhedsbrev">
-			<!-- Trigger/Open The Modal -->
-			<button id="myBtn">TILMELD NYHEDSBREV</button>
-		</section>
-
-		<p>Kontakt : <br> Mail: info@food8.dk</p>
-	</footer>
+    <div class="btn_container">
+        <button type="button" class="blivdel_btn" data-toggle="collapse" data-target="#demo">LOGIN</button>
+        <div id="demo" class="collapse">
+            LOGIN FOR FOOD8 PARTNERE/MEDLEMMER
+        </div>
 
 
+        <div class="btn_container">
+            <button type="button" class="blivdel_btn" data-toggle="collapse" data-target="#demo">Bliv en del af Food8</button>
+            <div id="demo" class="collapse">
+                Hvis du gerne vil være en del af Food8, kan du bla bla bla...
+            </div>
 
-	<script>
-        $(".container_drop").click(function() {
-            $(".container_drop").toggleClass("change");
-            $(".dropdown").slideToggle();
-        });
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "300px";
-            document.getElementById("main").style.marginLeft = "250px";
-            $("#main").hide();
-        }
+            <footer>
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            $("#main").fadeIn();
-        }
+                <section>
+                    <a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"></a>
+                </section>
+                <section>
+                    <a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"></a>
+                </section>
+                <section class="nyhedsbrev">
+                    <!-- Trigger/Open The Modal -->
+                    <button id="myBtn">TILMELD NYHEDSBREV</button>
+                </section>
 
-		//		------------modalvindue-------------
-
-		// Get the modal
-		var modal = document.getElementById('myModal');
-
-		// Get the button that opens the modal
-		var btn = document.getElementById("myBtn");
-
-		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
-
-		// When the user clicks the button, open the modal
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-
-		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-
-		//		------------modalvindue SLUT-------------
+                <p>Kontakt : <br> Mail: info@food8.dk</p>
+            </footer>
 
 
 
+            <script>
+                $(".container_drop").click(function() {
+                    $(".container_drop").toggleClass("change");
+                    $(".dropdown").slideToggle();
+                });
+
+                function openNav() {
+                    document.getElementById("mySidenav").style.width = "300px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                    $("#main").hide();
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                    $("#main").fadeIn();
+                }
+
+                //		------------modalvindue-------------
+
+                // Get the modal
+                var modal = document.getElementById('myModal');
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                //		------------modalvindue SLUT-------------
 
 
 
 
 
 
-		let jSonUrl = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/om_food8";
-		let display = document.querySelector("[data-templatedisplay]");
-		let template = document.querySelector("[data-template]");
-		let steder = [];
-
-		document.addEventListener("DOMContentLoaded", hentJson);
-
-		async function hentJson() {
-			let dataJson = await fetch(jSonUrl);
-			steder = await dataJson.json();
-			console.log("Stop making fetch happen Gretchen!");
-			visSteder();
-		};
 
 
-		function visSteder() {
-			steder.forEach(sted => {
-				console.log(sted);
-				let templateModtager = document.querySelector("[data-container]");
-				let klon = template.cloneNode(true).content;
 
-				//                klon.querySelector("[data-overskrift]").textContent = sted.title.rendered;
-				klon.querySelector("[data-manchet]").textContent = sted.acf.manchet;
-				klon.querySelector("[data-textcontent]").innerHTML = sted.content.rendered;
-				templateModtager.appendChild(klon);
-				console.log("The Klon War is over!")
-			});
-		}
-	</script>
+                let jSonUrl = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/om_food8";
+                let display = document.querySelector("[data-templatedisplay]");
+                let template = document.querySelector("[data-template]");
+                let steder = [];
+
+                document.addEventListener("DOMContentLoaded", hentJson);
+
+                async function hentJson() {
+                    let dataJson = await fetch(jSonUrl);
+                    steder = await dataJson.json();
+                    console.log("Stop making fetch happen Gretchen!");
+                    visSteder();
+                };
+
+
+                function visSteder() {
+                    steder.forEach(sted => {
+                        console.log(sted);
+                        let templateModtager = document.querySelector("[data-container]");
+                        let klon = template.cloneNode(true).content;
+                        klon.querySelector("[data-overskrift]").textContent = sted.title.rendered;
+                        klon.querySelector("[data-manchet]").textContent = sted.acf.manchet;
+                        klon.querySelector("[data-textcontent]").innerHTML = sted.content.rendered;
+                        templateModtager.appendChild(klon);
+                        console.log("The Klon War is over!")
+                    });
+                }
+            </script>
 
 
 

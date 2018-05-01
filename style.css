@@ -1336,3 +1336,8 @@ input[type=submit] {
 input[type=submit]:hover {
     opacity: 0.8;
 }
+
+
+.btn_container {
+    margin-bottom: 20vw;
+}
