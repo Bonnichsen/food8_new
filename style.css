@@ -520,6 +520,10 @@ footer .nyhedsbrev p {
         visibility: hidden;
     }
 
+    .frame {
+        background-color: rgba(101, 195, 176, 0.12);
+    }
+
     #main p {
         margin: 3px 0 0 35px;
     }
