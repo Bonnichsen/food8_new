@@ -1373,3 +1373,22 @@ input[type=submit]:hover {
 .btn_container {
     margin-bottom: 20vw;
 }
+
+
+.medlem {
+    font-family: "Raleway";
+    font-weight: 700;
+    margin: 15vw;
+    font-size: 2em;
+}
+
+.medlem p {
+    font-weight: 300;
+    margin: 2.5vw 0;
+    font-size: 0.5em;
+}
+
+.medlem_img {
+    width: 65vw;
+    height: 30vw;
+}
