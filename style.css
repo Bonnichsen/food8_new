@@ -457,11 +457,11 @@ footer .nyhedsbrev p {
 }
 
 .some_splash .instagram {
-    width: 4vw;
+    width: 10vw;
     height: 5vw;
     position: absolute;
     right: 6vw;
-    bottom: 0;
+    bottom: 10px;
     color: white;
 }
 
@@ -469,7 +469,7 @@ footer .nyhedsbrev p {
     width: 4vw;
     height: 5vw;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     right: 1vw;
     color: white;
 }
@@ -498,6 +498,7 @@ footer .nyhedsbrev p {
         background-image: url(img/slideshow/mobile/m_noho1-01.jpg);
         background-position: right;
     }
+
 }
 
 @media screen and (min-width: 450px) {
