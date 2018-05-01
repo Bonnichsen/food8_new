@@ -58,9 +58,11 @@
     </section>
     <section class="logo_section">
         <a href="index.html" class="logo"></a>
+        <div class="frame"></div>
+
     </section>
     <header>
-<!--
+        <!--
 <nav>
     <a href="index.html">HOME</a>
     <a href="steder.html">STEDER</a>
@@ -149,7 +151,6 @@
             $(".dropdown").slideToggle();
         });
 
-
         function openNav() {
             document.getElementById("mySidenav").style.width = "300px";
             document.getElementById("main").style.marginLeft = "250px";
@@ -161,7 +162,6 @@
             document.getElementById("main").style.marginLeft = "0";
             $("#main").fadeIn();
         }
-
         //		------------modalvindue-------------
 
         // Get the modal
@@ -191,10 +191,6 @@
         }
 
         //		------------modalvindue SLUT-------------
-
-
-
-
 
         let jSonUrl = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/nyheder";
         let display = document.querySelector("[data-templatedisplay]");

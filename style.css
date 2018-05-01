@@ -61,19 +61,30 @@ header {
 }
 
 .logo_section {
-    height: 20vw;
+    height: 25vw;
     background-color: white;
+    background-image: url(img/slideshow/un_mercato-01.jpg);
+    background-position: bottom;
+}
+
+.logo_section .frame {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(10, 70, 37, 0.29);
 }
 
 .logo {
-    background-image: url(img/logo_solid.png);
+    background-image: url(img/logo_white.png);
     background-size: 100%;
     background-repeat: no-repeat;
     width: 35vw;
     height: 15vw;
-    z-index: 200;
+    z-index: 500;
     /*	filter: brightness(1.3);*/
-    margin: 5vw 0 0 5vw;
+    margin: 2vw;
+    left: 31vw;
+    top: 4.4vw;
     position: absolute;
 }
 
@@ -906,6 +917,18 @@ footer .nyhedsbrev p {
 /*-- MEDIA QUERY MAX 900 PIXELS --*/
 
 @media screen and (max-width:900px) {
+    .logo_section {
+        height: 40vw;
+        background-size: 210%;
+    }
+
+    .logo_section .logo {
+        top: 10vw;
+        left: 22.5vw;
+        width: 50vw;
+        height: 24vw;
+    }
+
 
     #main p {
         margin: 3px 3px 3px 37px;
@@ -990,9 +1013,18 @@ footer .nyhedsbrev p {
     /*-- LOGO --*/
     .logo_forside {
         top: 42vw;
-        left: 26vw;
+    }
+
+    .logo_section {
+        height: 50vw;
+        background-size: 250%;
+    }
+
+    .logo_section .logo {
+        top: 16vw;
+        left: 22.5vw;
         width: 50vw;
-        height: 60vw;
+        height: 24vw;
     }
 
     /*-- ABOUT --*/
