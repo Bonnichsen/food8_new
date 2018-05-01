@@ -155,6 +155,8 @@
 
 
     <script>
+
+
         //		------------modalvindue-------------
 
         // Get the modal
@@ -195,6 +197,14 @@
             $(".dropdown").slideToggle();
         });
 
+         $(window).scroll(function() {
+            if ($(this).scrollTop() > 250) {
+                $(".header").addClass("changeColor");
+            }
+            if ($(this).scrollTop() < 250) {
+                $(".header").removeClass("changeColor");
+            };
+        });
 
         function openNav() {
             document.getElementById("mySidenav").style.width = "300px";
