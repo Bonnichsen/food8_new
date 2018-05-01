@@ -1012,7 +1012,10 @@ footer .nyhedsbrev p {
 
     /*-- LOGO --*/
     .logo_forside {
-        top: 42vw;
+        top: 41vw;
+        width: 60vw;
+        height: 30vw;
+        left: 20.5vw;
     }
 
     .logo_section {
