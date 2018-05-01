@@ -128,78 +128,79 @@
         </div>
 
 
-        <div class="btn_container">
-            <button type="button" class="blivdel_btn" data-toggle="collapse" data-target="#demo">Bliv en del af Food8</button>
-            <div id="demo" class="collapse">
-                Hvis du gerne vil være en del af Food8, kan du bla bla bla...
-            </div>
+        <div class="medlem">
+            <details>
+                <summary>Bliv en del af food8</summary>
+                <p class="popup-langbeskrivelse" data-langbeskrivelse></p>
+                <p class="popup-pris" data-pris>weffsdfs</p>
+            </details>
+        </div>
+
+        <footer>
+
+            <section>
+                <a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"></a>
+            </section>
+            <section>
+                <a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"></a>
+            </section>
+            <section class="nyhedsbrev">
+                <!-- Trigger/Open The Modal -->
+                <button id="myBtn">TILMELD NYHEDSBREV</button>
+            </section>
+
+            <p>Kontakt : <br> Mail: info@food8.dk</p>
+        </footer>
 
 
-            <footer>
 
-                <section>
-                    <a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"></a>
-                </section>
-                <section>
-                    <a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"></a>
-                </section>
-                <section class="nyhedsbrev">
-                    <!-- Trigger/Open The Modal -->
-                    <button id="myBtn">TILMELD NYHEDSBREV</button>
-                </section>
+        <script>
+            $(".container_drop").click(function() {
+                $(".container_drop").toggleClass("change");
+                $(".dropdown").slideToggle();
+            });
 
-                <p>Kontakt : <br> Mail: info@food8.dk</p>
-            </footer>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "300px";
+                document.getElementById("main").style.marginLeft = "250px";
+                $("#main").hide();
+            }
 
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                $("#main").fadeIn();
+            }
 
+            //		------------modalvindue-------------
 
-            <script>
-                $(".container_drop").click(function() {
-                    $(".container_drop").toggleClass("change");
-                    $(".dropdown").slideToggle();
-                });
+            // Get the modal
+            var modal = document.getElementById('myModal');
 
-                function openNav() {
-                    document.getElementById("mySidenav").style.width = "300px";
-                    document.getElementById("main").style.marginLeft = "250px";
-                    $("#main").hide();
-                }
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
 
-                function closeNav() {
-                    document.getElementById("mySidenav").style.width = "0";
-                    document.getElementById("main").style.marginLeft = "0";
-                    $("#main").fadeIn();
-                }
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-                //		------------modalvindue-------------
+            // When the user clicks the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
 
-                // Get the modal
-                var modal = document.getElementById('myModal');
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
 
-                // Get the button that opens the modal
-                var btn = document.getElementById("myBtn");
-
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
-
-                // When the user clicks the button, open the modal
-                btn.onclick = function() {
-                    modal.style.display = "block";
-                }
-
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function() {
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
                     modal.style.display = "none";
                 }
+            }
 
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                }
-
-                //		------------modalvindue SLUT-------------
+            //		------------modalvindue SLUT-------------
 
 
 
@@ -209,34 +210,34 @@
 
 
 
-                let jSonUrl = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/om_food8";
-                let display = document.querySelector("[data-templatedisplay]");
-                let template = document.querySelector("[data-template]");
-                let steder = [];
+            let jSonUrl = "http://benjaminbonnichsen.dk/food8/wordpress/wp-json/wp/v2/om_food8";
+            let display = document.querySelector("[data-templatedisplay]");
+            let template = document.querySelector("[data-template]");
+            let steder = [];
 
-                document.addEventListener("DOMContentLoaded", hentJson);
+            document.addEventListener("DOMContentLoaded", hentJson);
 
-                async function hentJson() {
-                    let dataJson = await fetch(jSonUrl);
-                    steder = await dataJson.json();
-                    console.log("Stop making fetch happen Gretchen!");
-                    visSteder();
-                };
+            async function hentJson() {
+                let dataJson = await fetch(jSonUrl);
+                steder = await dataJson.json();
+                console.log("Stop making fetch happen Gretchen!");
+                visSteder();
+            };
 
 
-                function visSteder() {
-                    steder.forEach(sted => {
-                        console.log(sted);
-                        let templateModtager = document.querySelector("[data-container]");
-                        let klon = template.cloneNode(true).content;
-                        klon.querySelector("[data-overskrift]").textContent = sted.title.rendered;
-                        klon.querySelector("[data-manchet]").textContent = sted.acf.manchet;
-                        klon.querySelector("[data-textcontent]").innerHTML = sted.content.rendered;
-                        templateModtager.appendChild(klon);
-                        console.log("The Klon War is over!")
-                    });
-                }
-            </script>
+            function visSteder() {
+                steder.forEach(sted => {
+                    console.log(sted);
+                    let templateModtager = document.querySelector("[data-container]");
+                    let klon = template.cloneNode(true).content;
+                    klon.querySelector("[data-overskrift]").textContent = sted.title.rendered;
+                    klon.querySelector("[data-manchet]").textContent = sted.acf.manchet;
+                    klon.querySelector("[data-textcontent]").innerHTML = sted.content.rendered;
+                    templateModtager.appendChild(klon);
+                    console.log("The Klon War is over!")
+                });
+            }
+        </script>
 
 
 
