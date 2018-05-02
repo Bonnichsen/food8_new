@@ -1220,15 +1220,25 @@ footer .nyhedsbrev p {
 	cursor: pointer;
 }
 
-#myBtn {
-	background-color: #374251;
-	color: white;
-	position: absolute;
-	left: 45%;
-	top: 3vw;
 
+#myBtn {
+	background-color: rgba(55, 66, 81, 0);
+	color: white;
+	position: fixed;
+	top: 95%;
+	z-index: 3;
+	left: 50vw;
+	font-weight: 700;
+	padding: 2px;
 }
 
+
+
+
+.nyhedsbrev #myBtn {
+	border: solid;
+	border-color: #65c3b0;
+}
 
 /*
 	-------------nyt indhold------------
@@ -1279,10 +1289,6 @@ input[type=submit]:hover {
 
 /* The Modal (background) */
 
-.nyhedsbrev {
-	color: white;
-}
-
 .modal {
 	display: none;
 	/* Hidden by default */
@@ -1331,14 +1337,6 @@ input[type=submit]:hover {
 	cursor: pointer;
 }
 
-#myBtn {
-	background-color: #374251;
-	color: white;
-	position: fixed;
-	top: 95%;
-	z-index: 3;
-	left: 50vw;
-}
 
 
 /*
