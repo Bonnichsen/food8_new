@@ -72,6 +72,8 @@
         <h1>Steder</h1>
     </div>
 
+    <div id="map"></div>
+
     <div id="grid-container" class="steder">
         <section data-container></section>
     </div>
@@ -143,6 +145,431 @@
     </footer>
 
     <script>
+        let icon;
+        let iconleft;
+        let iconright;
+        let map;
+        let marker;
+
+        //VARIABLER FOR LOKATION FOR HVERT ENKELT STED
+
+        let cleavers = {
+            lat: 55.683690,
+            lng: 12.569766
+        };
+
+        let metier = {
+            lat: 55.695038,
+            lng: 12.569340
+        };
+
+        let thefatpike = {
+            lat: 55.666611,
+            lng: 12.579911
+        };
+
+        let unmercato = {
+            lat: 55.683928,
+            lng: 12.570082
+        };
+
+        let spisehuset = {
+            lat: 55.669184,
+            lng: 12.560794
+        };
+
+        let fleisch = {
+            lat: 55.669064,
+            lng: 12.558715
+        };
+
+        let rodder = {
+            lat: 55.688250,
+            lng: 12.561815
+        };
+
+        let noho = {
+            lat: 55.667643,
+            lng: 12.558010
+        };
+
+
+        function initMap() {
+            map = new google.maps.Map(document.querySelector("#map"), {
+                //center: centrum,
+                zoom: 12.5,
+                styles: [{
+                        elementType: 'geometry', //baggrundsfarve
+                        stylers: [{
+                            color: '#eaeaea'
+                        }]
+                    },
+                    {
+                        elementType: 'labels.text.fill', //Få labels (Christiania, Christianshavn)
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'administrative.locality', //områdenavne - N, F, KBH N, KBH
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'poi', //Ting; Vega, Zoo, Vor frue kirke, Rosenborg slot...
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#444444'
+                        }]
+                    },
+                    {
+                        featureType: 'poi.park', //Grønne områder
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#e3e3e3'
+                        }]
+                    },
+                    {
+                        featureType: 'poi.park', //Navne på de grønne områder
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#888888'
+                        }]
+                    },
+                    {
+                        featureType: 'road', //Generelle veje
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#cccccc'
+
+                        }]
+                    },
+                    {
+                        featureType: 'road', //Streg på generelle veje
+                        elementType: 'geometry.stroke',
+                        stylers: [{
+                            color: '#cccccc'
+                        }]
+                    },
+                    {
+                        featureType: 'road', //Vejnavne
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway', //motorveje
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#afafaf'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway', //stregfarve til motorveje
+                        elementType: 'geometry.stroke',
+                        stylers: [{
+                            color: '#afafaf'
+                        }]
+                    },
+                    {
+                        featureType: 'road.highway', //tekstfarve til motorveje
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'transit', //offentlig transport (tog)
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#999999'
+                        }]
+                    },
+                    {
+                        featureType: 'transit.station', //Stationsnavne - Vesterport, Nørreport, owv
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'water', //vand
+                        elementType: 'geometry',
+                        stylers: [{
+                            color: '#e1e1e1'
+                        }]
+                    },
+                    {
+                        featureType: 'water', //vand navne
+                        elementType: 'labels.text.fill',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    },
+                    {
+                        featureType: 'water', //vand stregfarve på navne
+                        elementType: 'labels.text.stroke',
+                        stylers: [{
+                            color: '#000000'
+                        }]
+                    }
+                ]
+            });
+
+            icon = {
+                url: "8marker.png",
+                scaledSize: new google.maps.Size(30, 40)
+            }
+
+            iconleft = {
+                url: "markerleft3.png",
+                scaledSize: new google.maps.Size(70, 70)
+            }
+
+            iconright = {
+                url: "markerright3.png",
+                scaledSize: new google.maps.Size(70, 70)
+            }
+
+            //VARIABLER FOR HVERT ENKELT STED
+
+            let markerkea = new google.maps.Marker({
+                position: cleavers,
+                title: "Cleaver's",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markermetier = new google.maps.Marker({
+                position: metier,
+                title: "Metier",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markerthefatpike = new google.maps.Marker({
+                position: thefatpike,
+                title: "The Fat Pike",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markerunmercato = new google.maps.Marker({
+                position: unmercato,
+                title: "Un Mercato",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markerspisehuset = new google.maps.Marker({
+                position: spisehuset,
+                title: "Spisehuset",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markerfleisch = new google.maps.Marker({
+                position: fleisch,
+                title: "FLEISCH",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markerrodder = new google.maps.Marker({
+                position: rodder,
+                title: "Rødder og Vin",
+                icon: icon,
+                map: map,
+
+            });
+
+            let markernoho = new google.maps.Marker({
+                position: noho,
+                title: "NOHO",
+                icon: icon,
+                map: map,
+
+            });
+
+
+
+
+            //HVAD SKAL DER STÅ I INFOVINDUE
+
+            let infowindowkea = new google.maps.InfoWindow({
+                content: "<h2>Cleaver's Meat Market</h2> <p>TorvehallerneKBH<br> Torvehal 1, Stade G3 og H3 <br>Frederiksborggade 21<br>1360 København K</p>"
+            });
+
+            let infowindowmetier = new google.maps.InfoWindow({
+                content: "<h2>Metier</h2> <p>Blegdamsvej 70 <br> 2100 København Ø</p>"
+            });
+
+            let infowindowthefatpike = new google.maps.InfoWindow({
+                content: "<h2>The Fat Pike</h2> <p>Njalsgade 19D<br> 2300 København S</p>"
+            });
+
+            let infowindowunmercato = new google.maps.InfoWindow({
+                content: "<h2>Un Mercato</h2> <p>Frederiksborggade 19 <br>1360 København K</p>"
+            });
+
+            let infowindowspisehuset = new google.maps.InfoWindow({
+                content: "<h2>Spisehuset</h2> <p>Slagtehusgade 5C <br>1715 København V</p>"
+            });
+
+            let infowindowfleisch = new google.maps.InfoWindow({
+                content: "<h2>FLEISCH</h2> <p>Slagterboderne 7<br>1715 København V</p>"
+            });
+
+            let infowindowrodder = new google.maps.InfoWindow({
+                content: "<h2>Rødder og Vin</h2> <p>Ravnsborggade 8<br>2200 København N</p>"
+            });
+
+            let infowindownoho = new google.maps.InfoWindow({
+                content: "<h2>NOHO</h2> <p>Flæsketorvet<br>1715 København V</p>"
+            });
+
+
+            //ÅBEN VINDUE NÅR MAN TRYKKER PÅ MARKER
+
+
+
+            markerkea.addListener("click", (e) => {
+
+                infowindowkea.open(map, markerkea);
+                infowindowmetier.close(map, markermetier);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+            });
+
+            markermetier.addListener("click", (e) => {
+
+                infowindowmetier.open(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+            markerthefatpike.addListener("click", (e) => {
+
+                infowindowthefatpike.open(map, markerthefatpike);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+            markerunmercato.addListener("click", (e) => {
+
+                infowindowunmercato.open(map, markerunmercato);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+            markerspisehuset.addListener("click", (e) => {
+
+                infowindowspisehuset.open(map, markerspisehuset);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+            markerfleisch.addListener("click", (e) => {
+
+                infowindowfleisch.open(map, markerfleisch);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowrodder.close(map, markerrodder);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+            markerrodder.addListener("click", (e) => {
+
+                infowindowrodder.open(map, markerrodder);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindownoho.close(map, markernoho);
+
+            });
+
+
+            markernoho.addListener("click", (e) => {
+
+                infowindownoho.open(map, markernoho);
+                infowindowmetier.close(map, markermetier);
+                infowindowkea.close(map, markerkea);
+                infowindowthefatpike.close(map, markerthefatpike);
+                infowindowunmercato.close(map, markerunmercato);
+                infowindowspisehuset.close(map, markerspisehuset);
+                infowindowfleisch.close(map, markerfleisch);
+                infowindowrodder.close(map, markerrodder);
+
+            });
+
+
+
+
+            geocodeAddress();
+
+        };
+
+        function geocodeAddress() {
+            let geocoder = new google.maps.Geocoder();
+            var minAdresse =
+                "Nørre Voldgade, 1358 København";
+            geocoder.geocode({
+                'address': minAdresse
+            }, function(results, status) {
+                if (status === 'OK') {
+                    map.setCenter(results[0].geometry.location);
+
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        };
+
+
         $(".container_drop").click(function() {
             $(".container_drop").toggleClass("change");
             $(".dropdown").slideToggle();
