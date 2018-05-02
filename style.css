@@ -495,21 +495,26 @@ footer .nyhedsbrev p {
 }
 */
 
+/*-- SOME IKONER: IPAD --*/
+
+.some_splash .instagram,
+.some_splash .facebook {
+    font-size: 1.6em;
+    width: 3.2vw;
+    height: 4vw;
+}
+
 .some_splash .instagram {
-    width: 10vw;
-    height: 5vw;
     position: absolute;
-    right: 6vw;
+    right: 6.5vw;
     bottom: 10px;
     color: white;
 }
 
 .some_splash .facebook {
-    width: 4vw;
-    height: 5vw;
     position: absolute;
     bottom: 10px;
-    right: 1vw;
+    right: 2vw;
     color: white;
 }
 
@@ -943,6 +948,20 @@ footer .nyhedsbrev p {
     .logo_section .logo {
         top: 8vw;
     }
+
+    /*-- SOME IKONER: IPAD --*/
+    .some_splash .instagram,
+    .some_splash .facebook {
+        font-size: 1.3em;
+        height: 5vw;
+    }
+    .some_splash .instagram {
+        right: 6.5vw;
+    }
+
+    .some_splash .facebook {
+        right: 2vw;
+    }
 }
 
 /*--- MEDIA QUERY 1050 PIXELS - LOGO FIX --*/
@@ -950,6 +969,20 @@ footer .nyhedsbrev p {
 @media screen and (max-width:1050px) {
     .logo_section .logo {
         top: 10.5vw;
+    }
+    /*-- SOME IKONER: IPAD --*/
+    .some_splash .instagram,
+    .some_splash .facebook {
+        font-size: 1.3em;
+        width: 5vw;
+        height: 5vw;
+    }
+    .some_splash .instagram {
+        right: 8vw;
+    }
+
+    .some_splash .facebook {
+        right: 2vw;
     }
 }
 
@@ -1030,7 +1063,11 @@ footer .nyhedsbrev p {
         height: 6vw;
     }
     .some_splash .instagram {
-        right: 7vw;
+        right: 8vw;
+    }
+
+    .some_splash .facebook {
+        right: 2vw;
     }
 
 
@@ -1041,6 +1078,20 @@ footer .nyhedsbrev p {
 @media screen and (max-width:750px) {
     .logo_section .logo {
         top: 15vw;
+    }
+
+    /*-- SOME IKONER: IPAD --*/
+    .some_splash .instagram,
+    .some_splash .facebook {
+
+        height: 8vw;
+    }
+    .some_splash .instagram {
+        right: 11vw;
+    }
+
+    .some_splash .facebook {
+        right: 3.5vw;
     }
 }
 
@@ -1189,10 +1240,10 @@ footer .nyhedsbrev p {
     .some_splash .facebook {
         font-size: 1.3em;
         width: 8vw;
-        height: 10vw;
+        height: 9.5vw;
     }
     .some_splash .instagram {
-        right: 11vw;
+        right: 13vw;
     }
 }
 
@@ -1201,6 +1252,19 @@ footer .nyhedsbrev p {
 
     .logo_section .logo {
         top: 28vw;
+    }
+
+    /*-- SOME IKONER: MOBILE --*/
+    /*-- SOME IKONER: MOBILE --*/
+    .some_splash .instagram,
+    .some_splash .facebook {
+        height: 10vw;
+    }
+    .some_splash .facebook {
+        right: 4.5vw;
+    }
+    .some_splash .instagram {
+        right: 16vw;
     }
 }
 
