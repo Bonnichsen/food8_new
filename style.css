@@ -477,14 +477,19 @@ footer .nyhedsbrev p {
     background-image: url(img/bookbord.svg);
     background-repeat: no-repeat;
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     position: fixed;
     top: 0;
     margin: 2px 13px 2px 2px;
     right: 0.5vw;
     filter: invert(100);
+    transition: margin-left .5s;
+    padding: 16px;
+    position: fixed;
+    z-index: 900;
 }
+
 
 .some_splash .instagram {
     width: 10vw;
@@ -685,6 +690,7 @@ footer .nyhedsbrev p {
             opacity: 1
         }
     }
+
 }
 
 /*-- STEDER DESKTOP --*/
@@ -986,6 +992,10 @@ footer .nyhedsbrev p {
     }
 
     /*-- FOOTER --*/
+    footer {
+        z-index: 200;
+    }
+
     footer .instagram {
         width: 4vw;
         height: 7vw;
@@ -1184,12 +1194,16 @@ footer .nyhedsbrev p {
     color: white;
 }
 
+#myModal {
+    z-index: 600;
+}
+
 .modal {
     display: none;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 1000;
     /* Sit on top */
     padding-top: 100px;
     /* Location of the box */
@@ -1214,6 +1228,7 @@ footer .nyhedsbrev p {
     margin: auto;
     padding: 20px;
     width: 80%;
+    z-index: 500;
 }
 
 /* The Close Button */
