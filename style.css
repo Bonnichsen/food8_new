@@ -337,7 +337,7 @@ footer .nyhedsbrev p {
     width: 30vw;
     height: 15vw;
     position: absolute;
-    top: 8.5vw;
+    top: 12.5vw;
     left: 36vw;
     z-index: 500;
     filter: brightness(1.3);
@@ -354,7 +354,7 @@ footer .nyhedsbrev p {
 
 .quote {
     position: absolute;
-    top: 26vw;
+    top: 26.5vw;
     left: 30vw;
     color: #f1f1f1;
     font-size: 5vw;
@@ -467,7 +467,7 @@ footer .nyhedsbrev p {
 }
 
 #main p {
-    margin: 3px 120px 0 0px;
+    margin: 3px 80px 0 0px;
     padding: 3px;
     border: 2px rgba(101, 195, 176, 1) solid;
 }
@@ -476,6 +476,7 @@ footer .nyhedsbrev p {
     transform: scale(1.1);
 }
 
+/*
 #book_icon {
     background-image: url(img/bookbord.svg);
     background-repeat: no-repeat;
@@ -492,7 +493,7 @@ footer .nyhedsbrev p {
     position: fixed;
     z-index: 900;
 }
-
+*/
 
 .some_splash .instagram {
     width: 10vw;
@@ -560,10 +561,6 @@ footer .nyhedsbrev p {
 
     .frame {
         background-color: rgba(101, 195, 176, 0.12);
-    }
-
-    #main p {
-        margin: 3px 42px 0 0px;
     }
 
     #p_index,
@@ -971,7 +968,7 @@ footer .nyhedsbrev p {
     }
 
     #main p {
-        margin: 3px 100px 3px 3px;
+        margin: 3px 40px 3px 3px;
     }
 
     /*-- NYHEDER --*/
@@ -1052,18 +1049,18 @@ footer .nyhedsbrev p {
 @media screen and (max-width:560px) {
 
     #main p {
-        margin: 3px 87px 0 0px;
+        margin: 3px 25px 0 0px;
     }
 
     .quote {
-        top: 70vw;
+        top: 83.5vw;
         left: 13.5vw;
         width: 74vw;
     }
 
     /*-- LOGO --*/
     .logo_forside {
-        top: 41vw;
+        top: 55.5vw;
         width: 60vw;
         height: 30vw;
         left: 20.5vw;
@@ -1211,7 +1208,7 @@ footer .nyhedsbrev p {
 @media screen and (max-width:415px) {
     /*--- MEDIA QUERY IPHONES --*/
     #main p {
-        margin: 3px 82px 3px 3px;
+        margin: 3px 15px 3px 3px;
     }
 
 
