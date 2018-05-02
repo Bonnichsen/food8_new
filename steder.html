@@ -23,10 +23,10 @@
         <div class="header">
             <div class="dropdown">
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="index.html" class="nav_home">HOME</a>
-                    <a href="steder.html" class="nav_steder">STEDER</a>
-                    <a href="nyheder.html" class="nav_nyheder">NYHEDER</a>
-                    <a href="om-food8.html" class="nav_food8">OM FOOD8</a>
+                    <a href="index.html" class="nav_home drop">HOME</a>
+                    <a href="steder.html" class="nav_steder drop">STEDER</a>
+                    <a href="nyheder.html" class="nav_nyheder drop">NYHEDER</a>
+                    <a href="om-food8.html" class="nav_food8 drop">OM FOOD8</a>
                 </div>
             </div>
 
@@ -151,9 +151,11 @@
         $(window).scroll(function() {
             if ($(this).scrollTop() > 250) {
                 $(".header").addClass("changeColor");
+                $(".drop").addClass("changeColorDrop");
             }
             if ($(this).scrollTop() < 250) {
                 $(".header").removeClass("changeColor");
+                $(".drop").removeClass("changeColorDrop");
             };
         });
 

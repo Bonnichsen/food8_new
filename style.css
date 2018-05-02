@@ -202,7 +202,6 @@ footer .nyhedsbrev p {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 	z-index: 4;
 	cursor: pointer;
-	transform: rotateY(180deg);
 	/*    display: none;*/
 }
 
@@ -210,8 +209,10 @@ footer .nyhedsbrev p {
 	background-color: rgba(51, 64, 82, 0.75);
 }
 
+
+
 .container_drop {
-	text-align: right;
+	text-align: left;
 	margin: 0;
 	position: relative;
 	left: 0;
@@ -269,12 +270,10 @@ footer .nyhedsbrev p {
 	width: 20px;
 	z-index: 1;
 	padding: 10px;
-	transform: rotateY(180deg);
-	text-align: right;
+	text-align: left;
 }
 
 .dropdown-content a {
-	color: white;
 	padding: 25px 0px 10px 5px;
 	text-decoration: none;
 	display: block;
@@ -283,7 +282,15 @@ footer .nyhedsbrev p {
 }
 
 .dropdown-content a:hover {
-	color: rgba(101, 195, 176, 1);
+	color: white;
+}
+
+.drop {
+	color: #334052;
+}
+
+.changeColorDrop {
+	color: white;
 }
 
 .show {
@@ -445,10 +452,11 @@ footer .nyhedsbrev p {
 
 #main {
 	transition: margin-left .5s;
-	padding: 16px;
+	padding: 10.5px;
 	position: fixed;
 	z-index: 900;
 	top: 0;
+	right: 0;
 	height: 1.5vw;
 	font-family: 'Raleway';
 	font-weight: bold;
@@ -456,21 +464,32 @@ footer .nyhedsbrev p {
 }
 
 #main p {
-	margin: 3px 0 0 20px;
+	margin: 1px 115px 0 0px;
+	padding: 3px;
+	border: 2px rgba(101, 195, 176, 1) solid;
+}
+
+#main p:hover {
+	transform: scale(1.1);
 }
 
 #book_icon {
 	background-image: url(img/bookbord.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 50px;
-	height: 50px;
+	width: 20px;
+	height: 20px;
 	position: fixed;
 	top: 0;
-	margin: 2px 2px 2px 13px;
-	left: 0.5vw;
+	margin: 2px 13px 2px 2px;
+	right: 0.5vw;
 	filter: invert(100);
+	transition: margin-left .5s;
+	padding: 16px;
+	position: fixed;
+	z-index: 900;
 }
+
 
 .some_splash .instagram {
 	width: 10vw;
@@ -541,7 +560,7 @@ footer .nyhedsbrev p {
 	}
 
 	#main p {
-		margin: 3px 0 0 35px;
+		margin: 3px 35px 0 0px;
 	}
 
 	#p_index,
@@ -671,6 +690,7 @@ footer .nyhedsbrev p {
 			opacity: 1
 		}
 	}
+
 }
 
 /*-- STEDER DESKTOP --*/
@@ -933,9 +953,8 @@ footer .nyhedsbrev p {
 		height: 24vw;
 	}
 
-
 	#main p {
-		margin: 3px 3px 3px 37px;
+		margin: 3px 92px 3px 3px;
 	}
 
 	/*-- NYHEDER --*/
@@ -1009,7 +1028,7 @@ footer .nyhedsbrev p {
 @media screen and (max-width:560px) {
 
 	#main p {
-		margin: 3px 0 0 50px;
+		margin: 3px 82px 0 0px;
 	}
 
 	.quote {
@@ -1157,6 +1176,14 @@ footer .nyhedsbrev p {
 	}
 }
 
+@media screen and (max-width:415px) {
+	/*--- MEDIA QUERY IPHONES --*/
+	#main p {
+		margin: 3px 76px 3px 3px;
+	}
+
+}
+
 
 
 /*modalvinde*/
@@ -1230,9 +1257,8 @@ footer .nyhedsbrev p {
 	left: 50vw;
 	font-weight: 700;
 	padding: 2px;
+
 }
-
-
 
 
 .nyhedsbrev #myBtn {
@@ -1284,58 +1310,6 @@ input[type=submit]:hover {
 	opacity: 0.8;
 }
 
-
-/*modalvinde*/
-
-/* The Modal (background) */
-
-.modal {
-	display: none;
-	/* Hidden by default */
-	position: fixed;
-	/* Stay in place */
-	z-index: 1;
-	/* Sit on top */
-	padding-top: 100px;
-	/* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%;
-	/* Full width */
-	height: 100%;
-	/* Full height */
-	overflow: auto;
-	/* Enable scroll if needed */
-	background-color: rgb(0, 0, 0);
-	/* Fallback color */
-	background-color: rgba(0, 0, 0, 0.4);
-	/* Black w/ opacity */
-}
-
-/* Modal Content */
-
-.modal-content {
-	background-color: #374251;
-	margin: auto;
-	padding: 20px;
-	width: 80%;
-}
-
-/* The Close Button */
-
-.close {
-	color: #aaaaaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
-}
 
 
 
