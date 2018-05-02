@@ -748,6 +748,12 @@ footer .nyhedsbrev p {
     font-weight: 400;
 }
 
+#map {
+    height: 20vw;
+    max-width: 82.5vw;
+    margin: 40px auto;
+}
+
 /*-- NYHEDER DESKTOP --*/
 
 .nyheder {
@@ -1140,6 +1146,13 @@ footer .nyhedsbrev p {
     }
 
     /*-- STEDER --*/
+    #map {
+        height: 80vw;
+        max-width: 80vw;
+        margin: 20px auto;
+    }
+
+
     .steder article {
         width: 100%;
         margin: 2vw 0;
