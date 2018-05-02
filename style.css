@@ -202,7 +202,6 @@ footer .nyhedsbrev p {
     box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
     z-index: 4;
     cursor: pointer;
-    transform: rotateY(180deg);
     /*    display: none;*/
 }
 
@@ -210,8 +209,10 @@ footer .nyhedsbrev p {
     background-color: rgba(51, 64, 82, 0.75);
 }
 
+
+
 .container_drop {
-    text-align: right;
+    text-align: left;
     margin: 0;
     position: relative;
     left: 0;
@@ -269,12 +270,10 @@ footer .nyhedsbrev p {
     width: 20px;
     z-index: 1;
     padding: 10px;
-    transform: rotateY(180deg);
-    text-align: right;
+    text-align: left;
 }
 
 .dropdown-content a {
-    color: white;
     padding: 25px 0px 10px 5px;
     text-decoration: none;
     display: block;
@@ -283,7 +282,15 @@ footer .nyhedsbrev p {
 }
 
 .dropdown-content a:hover {
-    color: rgba(101, 195, 176, 1);
+    color: white;
+}
+
+.drop {
+    color: #334052;
+}
+
+.changeColorDrop {
+    color: white;
 }
 
 .show {
@@ -445,10 +452,11 @@ footer .nyhedsbrev p {
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    padding: 10.5px;
     position: fixed;
     z-index: 900;
     top: 0;
+    right: 0;
     height: 1.5vw;
     font-family: 'Raleway';
     font-weight: bold;
@@ -456,7 +464,13 @@ footer .nyhedsbrev p {
 }
 
 #main p {
-    margin: 3px 0 0 20px;
+    margin: 1px 115px 0 0px;
+    padding: 3px;
+    border: 2px rgba(101, 195, 176, 1) solid;
+}
+
+#main p:hover {
+    transform: scale(1.1);
 }
 
 #book_icon {
@@ -467,8 +481,8 @@ footer .nyhedsbrev p {
     height: 50px;
     position: fixed;
     top: 0;
-    margin: 2px 2px 2px 13px;
-    left: 0.5vw;
+    margin: 2px 13px 2px 2px;
+    right: 0.5vw;
     filter: invert(100);
 }
 
@@ -541,7 +555,7 @@ footer .nyhedsbrev p {
     }
 
     #main p {
-        margin: 3px 0 0 35px;
+        margin: 3px 35px 0 0px;
     }
 
     #p_index,
@@ -933,9 +947,8 @@ footer .nyhedsbrev p {
         height: 24vw;
     }
 
-
     #main p {
-        margin: 3px 3px 3px 37px;
+        margin: 3px 92px 3px 3px;
     }
 
     /*-- NYHEDER --*/
@@ -1005,7 +1018,7 @@ footer .nyhedsbrev p {
 @media screen and (max-width:560px) {
 
     #main p {
-        margin: 3px 0 0 50px;
+        margin: 3px 82px 0 0px;
     }
 
     .quote {
@@ -1151,6 +1164,14 @@ footer .nyhedsbrev p {
     .some_splash .instagram {
         right: 11vw;
     }
+}
+
+@media screen and (max-width:415px) {
+    /*--- MEDIA QUERY IPHONES --*/
+    #main p {
+        margin: 3px 76px 3px 3px;
+    }
+
 }
 
 
