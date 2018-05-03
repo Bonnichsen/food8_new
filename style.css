@@ -134,39 +134,31 @@ footer {
     width: 100%;
     height: 5%;
     color: white;
-    z-index: 2;
+    z-index: 300;
     background-color: rgba(51, 64, 82, 0.75);
 }
-
 
 footer p {
     font-size: 0.5em;
     margin-top: 95%;
 }
 
-
+footer .facebook,
 footer .instagram {
-
-    background-image: url(img/instaicon.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    color: white;
     width: 6vw;
     height: 7vw;
     position: absolute;
-    top: 1.5vw;
-    left: 90vw;
+    top: 1.3vw;
+    font-size: 1.5em;
+}
+
+footer .instagram {
+    left: 95vw;
 }
 
 footer .facebook {
-
-    background-image: url(img/faceicon.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 6vw;
-    height: 7vw;
-    position: absolute;
-    top: 1.5vw;
-    left: 80vw;
+    left: 90vw;
 }
 
 
@@ -461,13 +453,42 @@ footer .nyhedsbrev p {
     cursor: pointer;
 }
 
+#main_in {
+    transition: margin-left .5s;
+    padding: 10.5px;
+    position: relative;
+    z-index: 250;
+    top: 0;
+    right: 0;
+    height: auto;
+    font-family: 'Raleway';
+    cursor: pointer;
+}
+
+#open_bttn_in {
+    position: relative;
+    left: 29vw;
+    color: #334052;
+}
+
+#main_in p {
+    margin: 3px 80px 0 0px;
+    padding: 3px;
+    border-bottom: 2px rgba(101, 195, 176, 1) solid;
+    width: 23.7vw;
+    font-weight: bold;
+    font-family: 'Raleway';
+}
+
 #main p {
     margin: 3px 80px 0 0px;
     padding: 3px;
     border: 2px rgba(101, 195, 176, 1) solid;
 }
 
-#main p:hover {
+#main p:hover,
+#main_in p:hover,
+#myBtn_in:hover {
     transform: scale(1.1);
 }
 
@@ -998,20 +1019,6 @@ footer .nyhedsbrev p {
 @media screen and (max-width:4000px) {
 
 
-    footer .instagram {
-        width: 2vw;
-        height: 7vw;
-        left: 96vw;
-        top: 0.5vw;
-    }
-
-    footer .facebook {
-        width: 2vw;
-        height: 7vw;
-        left: 93vw;
-        top: 0.5vw;
-    }
-
     footer p {
         font-size: 0.8em;
         margin: 5px;
@@ -1059,6 +1066,19 @@ footer .nyhedsbrev p {
 
     .some_splash .facebook {
         right: 2vw;
+    }
+
+    footer .instagram {
+
+        left: 94vw;
+        font-size: 1.2em;
+        top: 1.6vw;
+    }
+
+    footer .facebook {
+        left: 88vw;
+        font-size: 1.2em;
+        top: 1.6vw;
     }
 }
 
@@ -1123,12 +1143,16 @@ footer .nyhedsbrev p {
         width: 4vw;
         height: 7vw;
         left: 94vw;
+        font-size: 1.2em;
+        top: 1.6vw;
     }
 
     footer .facebook {
         width: 4vw;
         height: 7vw;
         left: 88vw;
+        font-size: 1.2em;
+        top: 1.6vw;
     }
 
     /*-- SOME IKONER: IPAD --*/
@@ -1168,6 +1192,17 @@ footer .nyhedsbrev p {
 
     .some_splash .facebook {
         right: 3.5vw;
+    }
+    footer .instagram {
+
+        left: 94vw;
+        font-size: 1.2em;
+
+    }
+
+    footer .facebook {
+        left: 87vw;
+        font-size: 1.2em;
     }
 }
 
@@ -1304,18 +1339,20 @@ footer .nyhedsbrev p {
     }
 
     /*-- FOOTER --*/
+    footer .facebook,
     footer .instagram {
-        width: 4vw;
+        color: white;
+        width: 6vw;
         height: 7vw;
-        left: 94vw;
-        top: 2vw;
+        position: absolute;
+        top: 1.5vw;
+    }
+    footer .instagram {
+        left: 90vw;
     }
 
     footer .facebook {
-        width: 4vw;
-        height: 7vw;
-        left: 88vw;
-        top: 2vw;
+        left: 80vw;
     }
 
     /*-- SOME IKONER: MOBILE --*/
@@ -1433,14 +1470,29 @@ footer .nyhedsbrev p {
     background-color: rgba(55, 66, 81, 0);
     color: white;
     position: fixed;
-    top: 95%;
+    top: 94.8%;
     z-index: 3;
-    left: 50vw;
+    left: 40vw;
     font-weight: 700;
     padding: 2px;
-
 }
 
+#myBtn_in {
+    background-color: rgba(55, 66, 81, 0);
+    color: #334052;
+    position: relative;
+    z-index: 3;
+    left: 31.54vw;
+    font-size: 0.8em;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+#myBtn_in {
+    border-bottom: 2px rgba(101, 195, 176, 1) solid;
+    font-weight: bold;
+    font-family: 'Raleway';
+}
 
 .nyhedsbrev #myBtn {
     border: solid;

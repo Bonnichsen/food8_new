@@ -126,6 +126,10 @@
 
     <div class="overskrift">
         <h1>Nyheder</h1>
+        <section class="nyhedsbrev_in">
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn_in" class="nyhedsbrev_btn">TILMELD NYHEDSBREV</button>
+        </section>
     </div>
 
     <div id="grid-container" class="nyheder">
@@ -166,14 +170,14 @@
     <footer>
 
         <section>
-            <a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"></a>
+            <a href="https://www.instagram.com/food8dk/" target="_blank" class="instagram"><i class="fa fa-instagram fa-2x"></i></a>
         </section>
         <section>
-            <a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"></a>
+            <a href="https://www.facebook.com/food8dk/" target="_blank" class="facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
         </section>
         <section class="nyhedsbrev">
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn">TILMELD NYHEDSBREV</button>
+            <button id="myBtn" class="nyhedsbrev_btn">TILMELD NYHEDSBREV</button>
         </section>
 
         <p>Kontakt : <br> Mail: info@food8.dk</p>
@@ -197,7 +201,6 @@
     <div class="boks"></div>
 
     <script>
-
         let slideIndex = 0;
         showSlides();
 
@@ -256,11 +259,15 @@
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
 
+        var btn2 = document.getElementById("myBtn_in");
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks the button, open the modal
         btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        btn2.onclick = function() {
             modal.style.display = "block";
         }
 
