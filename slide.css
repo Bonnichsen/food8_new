@@ -1,72 +1,71 @@
-/*--- SLIDESHOW ---*/
+/*--- SLIDESHOW-HEADER ---*/
 
-#slideshow_body {
+#slideshow_body_header {
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
     width: 100vw;
-    height: 100vh;
+    height: 500px;
     overflow: hidden;
 }
 
-.mySlides {
+.mySlides_header {
     display: none;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
+    height: 200px;
     filter: brightness(0.75);
     vertical-align: middle;
     position: fixed;
-    bottom: 0;
     background-position: center;
 }
 
 /*-- SLIDE IMGS --*/
 
-#slide1 {
+#slide_header1 {
     background-image: url(img/slideshow/fleisch.jpg);
 }
 
-#slide2 {
+#slide_header2 {
     background-image: url(img/slideshow/noho-01.jpg);
 }
 
-#slide3 {
+#slide_header3 {
     background-image: url(img/slideshow/roedder_vin2-01.jpg);
     background-position: left;
 }
 
-#slide4 {
+#slide_header4 {
     background-image: url(img/slideshow/un_mercato-01.jpg);
     background-position: right;
 }
 
-#slide5 {
+#slide_header5 {
     background-image: url(img/slideshow/noho.jpg);
 }
 
-#slide6 {
+#slide_header6 {
     background-image: url(img/slideshow/roedder_vin-01.jpg);
     background-position: right;
 }
 
-#slide7 {
+#slide_header7 {
     background-image: url(img/slideshow/fleisch2.png);
 }
 
-#slide8 {
+#slide_header8 {
     background-image: url(img/slideshow/un_mercato2-01.jpg);
     background-position: right;
 }
 
-#slide9 {
+#slide_header9 {
     background-image: url(img/slideshow/noho2-01.jpg);
     background-position: right;
 }
 
 /* Slideshow container */
 
-.slideshow-container {
+.slideshow-container_header {
     width: 100vw;
     height: 100vh;
     position: relative;

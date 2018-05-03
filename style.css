@@ -62,14 +62,12 @@ header {
 
 .logo_section {
     height: 290px;
-    background-color: white;
-    background-image: url(img/slideshow/un_mercato-01.jpg);
-    background-position: bottom;
 }
 
 .logo_section .frame {
-    height: 100%;
-    position: relative;
+    height: 290px;
+    position: absolute;
+    top: 0;
     z-index: 1;
     background-color: rgba(10, 70, 37, 0.29);
 }
@@ -127,20 +125,17 @@ nav a:hover {
 /*-- FOOTER --*/
 
 footer {
-
-    background-color: #334052;
     color: white;
     height: auto;
     padding: 1.5vw;
-
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 5%;
-    background-color: #334052;
     color: white;
     z-index: 2;
+    background-color: rgba(51, 64, 82, 0.75);
 }
 
 
@@ -382,7 +377,7 @@ footer .nyhedsbrev p {
 }
 
 #inner_frame {
-    height: 865px;
+    height: 850px;
     position: relative;
     top: -220px;
 }
@@ -518,8 +513,83 @@ footer .nyhedsbrev p {
     color: white;
 }
 
+/*--- SLIDESHOW-HEADER ---*/
 
-/*--- SLIDESHOW ---*/
+#slideshow_body_header {
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    width: 100vw;
+    height: 290px;
+    overflow: hidden;
+}
+
+.mySlides_header {
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 290px;
+    filter: brightness(0.75);
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    background-position: center;
+}
+
+/*-- SLIDE IMGS --*/
+
+#slide_header1 {
+    background-image: url(img/slideshow/fleisch.jpg);
+}
+
+#slide_header2 {
+    background-image: url(img/slideshow/noho-01.jpg);
+}
+
+#slide_header3 {
+    background-image: url(img/slideshow/roedder_vin2-01.jpg);
+    background-position: left;
+}
+
+#slide_header4 {
+    background-image: url(img/slideshow/un_mercato-01.jpg);
+    background-position: right;
+}
+
+#slide_header5 {
+    background-image: url(img/slideshow/noho.jpg);
+}
+
+#slide_header6 {
+    background-image: url(img/slideshow/roedder_vin-01.jpg);
+    background-position: right;
+}
+
+#slide_header7 {
+    background-image: url(img/slideshow/fleisch2.png);
+}
+
+#slide_header8 {
+    background-image: url(img/slideshow/un_mercato2-01.jpg);
+    background-position: right;
+}
+
+#slide_header9 {
+    background-image: url(img/slideshow/noho2-01.jpg);
+    background-position: right;
+}
+
+/* Slideshow container */
+
+.slideshow-container_header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+/*--- SLIDESHOW SPLASH ---*/
 
 @media screen and (max-width: 415px) {
 
