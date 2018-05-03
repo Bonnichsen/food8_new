@@ -377,9 +377,9 @@ footer .nyhedsbrev p {
 }
 
 #inner_frame {
-    height: 850px;
+    height: 855px;
     position: relative;
-    top: -220px;
+    top: -250px;
 }
 
 #outer_frame {
