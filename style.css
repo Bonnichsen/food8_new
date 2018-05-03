@@ -30,6 +30,11 @@ p {
     font-family: "Raleway";
 }
 
+.nyhed a {
+    color: black;
+    text-decoration-color: #7dc1b1;
+}
+
 .sted a {
     font-family: "Raleway";
     font-weight: 600;
@@ -939,6 +944,7 @@ footer .nyhedsbrev p {
     height: 40vw;
     overflow: hidden;
     position: relative;
+    margin-top: 20px;
 }
 
 .nyhed [data-billede] {
@@ -997,6 +1003,13 @@ footer .nyhedsbrev p {
 
 .sted img {
     width: 90vw;
+}
+
+.stedbillede {
+    width: 100vw;
+    height: 40vw;
+    overflow: hidden;
+    position: relative;
 }
 
 .sted h2 {
@@ -1342,6 +1355,8 @@ footer .nyhedsbrev p {
         width: 82vw;
         margin: 50vw 0 0 0;
     }
+
+    .nyhedsbillede {}
 
     /*-- FOOTER --*/
     footer .facebook,
